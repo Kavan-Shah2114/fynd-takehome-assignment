@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+requests
+pydantic
+aiosqlite
+python-dotenv
+streamlit
+pandas
+scikit-learn
+matplotlib
+wordcloud

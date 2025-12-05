@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "generated_at": "2025-12-05T17:44:57.672021+00:00",
+    "sample_size": 200
+  },
+  "prompts": {
+    "base": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.165,
+      "within_one_accuracy": 0.645,
+      "confusion": [
+        [
+          1,
+          0,
+          17,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          79,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          52,
+          0,
+          0
+        ]
+      ],
+      "raw_outputs_example": [
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}",
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}",
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}"
+      ]
+    },
+    "fewshot": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.09,
+      "within_one_accuracy": 0.175,
+      "confusion": [
+        [
+          18,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          33,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          79,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          53,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_outputs_example": [
+        "{\"predicted_stars\": 1, \"explanation\": \"Mocked: detected cues -> assigned 1 star(s).\"}",
+        "{\"predicted_stars\": 1, \"explanation\": \"Mocked: detected cues -> assigned 1 star(s).\"}",
+        "{\"predicted_stars\": 1, \"explanation\": \"Mocked: detected cues -> assigned 1 star(s).\"}"
+      ]
+    },
+    "rubric": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.165,
+      "within_one_accuracy": 0.645,
+      "confusion": [
+        [
+          1,
+          0,
+          17,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          17,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          79,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          52,
+          0,
+          0
+        ]
+      ],
+      "raw_outputs_example": [
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}",
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}",
+        "{\"predicted_stars\": 3, \"explanation\": \"Mocked: detected cues -> assigned 3 star(s).\"}"
+      ]
+    }
+  }
+}
