@@ -1,11 +1,15 @@
+# Web Frameworks
 fastapi
 uvicorn[standard]
-requests
-pydantic
-aiosqlite
-python-dotenv
 streamlit
+requests
+
+# LLM Dependencies
+google-genai
+pydantic
+python-dotenv
+
+# Data & Database
+aiosqlite
 pandas
 scikit-learn
-matplotlib
-wordcloud
