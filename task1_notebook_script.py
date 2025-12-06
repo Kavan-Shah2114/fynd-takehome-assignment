@@ -1,5 +1,6 @@
 # task1_notebook_script.py (UPDATED: load dataset directly from data/yelp_reviews.csv)
 import os
+import time
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -12,7 +13,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 # Import the LLM helper and the model name constant exported by llm_client
-from llm_client import generate_text, OLLAMA_MODEL as LLM_MODEL
+from llm_client2 import generate_text, GEMINI_MODEL as LLM_MODEL
 from prompts import PROMPT_MAP
 
 # ---------- Config ----------
@@ -262,6 +263,10 @@ def run():
             if isinstance(pred, int) and 1 <= pred <= 5:
                 parsed_count += 1
             preds.append(pred if isinstance(pred, int) else -1)
+
+            # --- RATE LIMITING (GEMINI FREE TIER FIX) ---
+            # Sleep 4 seconds to ensure we stay under ~15 RPM (60s/15 = 4s)
+            time.sleep(4)
 
             if (i + 1) % 50 == 0 or (i + 1) == n:
                 print(f"  Processed {i+1}/{n}")

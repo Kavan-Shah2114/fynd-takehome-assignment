@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "sample_size": 200,
+    "generated_at": "2025-12-06T12:32:09.889644+00:00"
+  },
+  "prompts": {
+    "P1_base": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.6,
+      "within_one_accuracy": 0.98,
+      "confusion": [
+        [
+          7,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          16,
+          10,
+          3
+        ],
+        [
+          0,
+          0,
+          3,
+          33,
+          37
+        ],
+        [
+          0,
+          0,
+          1,
+          6,
+          52
+        ]
+      ],
+      "raw_outputs_example": [
+        {
+          "predicted_stars": 2,
+          "explanation": "Mixed experience with multiple issues, including unfair payment"
+        },
+        {
+          "predicted_stars": 5,
+          "explanation": "Strong praise with minor issue noted about ordering process."
+        },
+        {
+          "predicted_stars": 4,
+          "explanation": "Good food, but typical strip mall experience with minor issues."
+        }
+      ]
+    },
+    "P2_fewshot": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.585,
+      "within_one_accuracy": 0.975,
+      "confusion": [
+        [
+          13,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          10,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          14,
+          11,
+          3
+        ],
+        [
+          0,
+          0,
+          4,
+          27,
+          42
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          53
+        ]
+      ],
+      "raw_outputs_example": [
+        {
+          "predicted_stars": 2,
+          "explanation": "Mixed feelings, but major issue with business practices."
+        },
+        {
+          "predicted_stars": 5,
+          "explanation": "Strong praise and clear satisfaction."
+        },
+        {
+          "predicted_stars": 4,
+          "explanation": "Positive overall with a minor issue."
+        }
+      ]
+    },
+    "P3_rubric_cot": {
+      "parsed_count": 200,
+      "parsed_percent": 1.0,
+      "accuracy": 0.585,
+      "within_one_accuracy": 0.97,
+      "confusion": [
+        [
+          13,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          19,
+          7,
+          3
+        ],
+        [
+          0,
+          0,
+          7,
+          28,
+          38
+        ],
+        [
+          0,
+          0,
+          1,
+          9,
+          49
+        ]
+      ],
+      "raw_outputs_example": [
+        {
+          "predicted_stars": 2,
+          "explanation": "major problems, rude service"
+        },
+        {
+          "predicted_stars": 4,
+          "explanation": "mostly positive with small issue"
+        },
+        {
+          "predicted_stars": 4,
+          "explanation": "mostly positive with a neutral tone"
+        }
+      ]
+    }
+  }
+}

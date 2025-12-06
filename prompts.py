@@ -84,24 +84,40 @@ PROMPT_MAP = {
 # TASK 2 PROMPT (ADMIN + USER DASHBOARD)
 # ===================================================
 ADMIN_FULLJSON_PROMPT = """
-You are an AI operations analyst. Evaluate a customer's review + rating.
+You are a helpful assistant that must analyze a single customer review and return a JSON object ONLY (no extra text).
+Do NOT output any explanation outside the JSON. The JSON must be valid and parsable by a strict JSON parser.
 
-Input:
-- Review: "{user_review}"
-- User Rating: {user_rating}
+Input fields:
+- user_review: the text of the customer's review (string)
+- user_rating: the numeric rating the user supplied (integer 1-5)
 
-Return ONLY a JSON object with:
+Return EXACTLY one JSON object with the following keys (use these exact key names):
 
-predicted_stars : integer 1–5  
-explanation : 10–20 words  
-ai_summary : 15-word summary  
-ai_recommendations : array of 2–3 short business improvement actions  
-ai_reply : friendly 1–2 sentence response for customer
+{{
+  "predicted_stars": integer between 1 and 5,
+  "explanation": string (10-40 words) - short reasoning why the predicted_stars was chosen,
+  "ai_summary": string (10-20 words) - a concise summary of the review,
+  "ai_recommendations": array of 2-4 short recommendation strings (each 3-10 words),
+  "ai_reply": string (10-40 words) - friendly reply to the customer,
+}}
 
-RULES:
-- DO NOT wrap output inside ```json
-- DO NOT add commentary outside JSON
-- Output MUST be pure JSON
+Rules:
+1. Output MUST be **only** the JSON object (no surrounding backticks, no markdown, no commentary).
+2. All fields MUST be non-empty. If you cannot infer a meaningful recommendation, return "No recommendation available" as an item in the array.
+3. predicted_stars MUST be your model's best prediction (do not copy user_rating unless the review strongly supports it).
+4. Use temperature 0.0 behavior (deterministic).
+5. Keep explanation/summary concise and factual; do NOT hallucinate facts.
 
-Generate the JSON now.
+Example output (for guidance only):
+{{
+  "predicted_stars": 2,
+  "explanation": "Food was cold on arrival and staff were unresponsive, indicating poor service quality.",
+  "ai_summary": "Cold food and slow, unhelpful service.",
+  "ai_recommendations": ["Improve delivery packaging", "Train staff on response times"],
+  "ai_reply": "We're sorry your experience was poor — we'll investigate and improve our service."
+}}
+
+Now produce the JSON for the following input:
+user_review: \"{user_review}\"
+user_rating: {user_rating}
 """

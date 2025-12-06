@@ -53,7 +53,7 @@ def process_submissions(data):
 
     df["predicted_stars"] = df["parsed_admin"].apply(
         lambda x: x.get("predicted_stars", "N/A")
-    )
+    ).astype(str)
     df["explanation"] = df["parsed_admin"].apply(
         lambda x: x.get("explanation", "N/A")
     )
@@ -80,7 +80,7 @@ if df.empty:
     st.warning("No submissions found.")
 else:
     st.subheader("📋 Stored Reviews")
-    st.dataframe(df[[
+    display_df = df[[
         "id",
         "rating",
         "review",
@@ -89,7 +89,10 @@ else:
         "summary",
         "ai_reply",
         "created_at"
-    ]], use_container_width=True)
+    ]].copy()
+    display_df["predicted_stars"] = display_df["predicted_stars"].astype(str)
+    
+    st.dataframe(display_df, use_container_width=True)
 
     st.subheader("🧠 Parsed Admin JSON")
     st.json(df["parsed_admin"].tolist(), expanded=False)
