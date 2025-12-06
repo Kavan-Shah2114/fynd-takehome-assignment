@@ -23,4 +23,5 @@ COPY . /app
 ENV PORT=7860
 
 # Entry: run streamlit on $PORT binding to 0.0.0.0
-CMD ["bash", "-lc", "streamlit run user_dashboards.py --server.port $PORT --server.address 0.0.0.0"]
+CMD ["bash", "-lc", "streamlit run admin_dashboards.py --server.port $PORT --server.address 0.0.0.0"]
+# CMD ["bash", "-lc", "streamlit run user_dashboards.py --server.port $PORT --server.address 0.0.0.0"]
