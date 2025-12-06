@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Starting FastAPI backend on port 8000..."
-uvicorn main:app --host 0.0.0.0 --port 8000 &
+# start.sh - Start uvicorn on $PORT (Render expects your web service to bind $PORT)
+# Use $PORT provided by Render.
 
-sleep 2
+PORT="${PORT:-$1:-8000}"  # allow override but default to 8000 locally if needed
 
-echo "Starting Streamlit on Render's port: $PORT..."
-streamlit run merged_dashboards.py --server.port $PORT --server.address 0.0.0.0
+echo "Starting FastAPI backend with uvicorn on 0.0.0.0:${PORT} ..."
+uvicorn main:app --host 0.0.0.0 --port "${PORT}"
