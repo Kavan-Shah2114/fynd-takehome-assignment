@@ -268,7 +268,7 @@ def run():
             # Sleep 4 seconds to ensure we stay under ~15 RPM (60s/15 = 4s)
             time.sleep(4)
 
-            if (i + 1) % 50 == 0 or (i + 1) == n:
+            if (i + 1) % 5 == 0 or (i + 1) == n:
                 print(f"  Processed {i+1}/{n}")
 
         # --- Metrics Calculation ---
